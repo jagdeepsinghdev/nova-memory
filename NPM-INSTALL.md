@@ -1,9 +1,9 @@
-# NPM Installation - Nova Memory v1.0.0-beta.1
+# NPM Installation - Nova Memory
 
 ## Quick Install
 
 ```bash
-npm install -g @nova-mem/memory@1.0.0-beta.1
+npm install -g @nova-mem/ai-memory
 ```
 
 ## Verify Installation
@@ -33,11 +33,6 @@ nova-memory-mcp
 ```
 
 3. **Restart Claude Desktop**
-
-## Available Packages
-
-- **@nova-mem/memory** - Main package (free personal use)
-- **@nova-mem/memory-pro** - Production version
 
 ## Support
 

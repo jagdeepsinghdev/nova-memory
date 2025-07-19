@@ -1,34 +1,27 @@
-# Release Notes - Nova Memory v1.0.0-beta.1
+# Release Notes - Nova Memory v0.1.0-beta.1
 
 ## 🎯 What's New
 
-Initial release with 9 meta-tools, sub-millisecond performance, and 100% local privacy
+Binary-only distribution with complete IP protection. All source code is hidden and algorithms are protected.
 
-## 📦 Installation Options
+## 📦 Installation
 
 ### NPM (Recommended)
 ```bash
-npm install -g @nova-mem/memory@1.0.0-beta.1
+npm install -g @nova-mem/ai-memory
 ```
 
 ### Direct Download
-- [Windows (x64)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-win-x64.exe)
-- [macOS (Intel)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-macos-x64)
-- [macOS (Apple Silicon)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-macos-arm64)
-- [Linux (x64)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-linux-x64)
-
-## 🔧 MCP Server Files
-- [Windows MCP](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-mcp-win-x64.exe)
-- [macOS MCP (Intel)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-mcp-macos-x64)
-- [macOS MCP (Apple Silicon)](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-mcp-macos-arm64)
-- [Linux MCP](https://github.com/jagdeepsinghdev/nova-memory/releases/download/v1.0.0-beta.1/nova-memory-mcp-linux-x64)
+- [Windows](https://github.com/jagdeepsinghdev/nova-memory/releases)
+- [macOS](https://github.com/jagdeepsinghdev/nova-memory/releases)  
+- [Linux](https://github.com/jagdeepsinghdev/nova-memory/releases)
 
 ## 🛡️ Security & Privacy
 
 - ✅ **100% Local** - All data stays on your machine
 - ✅ **Zero Config** - Works immediately after installation
 - ✅ **No Telemetry** - Completely private
-- ✅ **Free Personal Use** - Commercial license available
+- ✅ **Binary Distribution** - Source code fully protected
 
 ## 📞 Support
 
