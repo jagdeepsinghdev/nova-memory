@@ -2,7 +2,7 @@
 
 Local AI memory system with MCP integration for Claude Desktop and other AI agents.
 
-[![npm version](https://badge.fury.io/js/@nova-mem/ai-memory.svg)](https://www.npmjs.com/package/@nova-mem/ai-memory)
+[![npm version](https://badge.fury.io/js/%40nova-mem%2Fai-memory.svg)](https://www.npmjs.com/package/@nova-mem/ai-memory)
 [![License: Commercial](https://img.shields.io/badge/License-Commercial-blue.svg)](LICENSE)
 
 ## 📦 Installation
@@ -34,8 +34,7 @@ npm install -g @nova-mem/ai-memory
    {
      "mcpServers": {
        "nova-memory": {
-         "command": "nova-memory-mcp",
-         "args": []
+         "command": "nova-memory-mcp"
        }
      }
    }
