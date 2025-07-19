@@ -1,0 +1,28 @@
+{
+  "name": "nova-memory",
+  "version": "1.0.0-beta.1",
+  "description": "Binary distribution for Nova Memory - Next-generation AI memory system",
+  "author": "Jagdeep Singh <jagdeep.singh@blockb.ca>",
+  "license": "Commercial",
+  "homepage": "https://github.com/jagdeepsinghdev/nova-memory",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jagdeepsinghdev/nova-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jagdeepsinghdev/nova-memory/issues"
+  },
+  "keywords": [
+    "ai",
+    "memory",
+    "mcp",
+    "claude",
+    "binary",
+    "productivity",
+    "zero-config",
+    "privacy"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
