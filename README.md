@@ -4,7 +4,6 @@
 
 [![npm version](https://badge.fury.io/js/%40nova-mcp%2Fmcp-nova.svg)](https://www.npmjs.com/package/@nova-mcp/mcp-nova)
 [![License](https://img.shields.io/badge/License-Commercial-blue.svg)](LICENSE)
-[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-green.svg)](https://modelcontextprotocol.com)
 
 > Give Claude Desktop, Claude Code, and Cursor permanent memory. Save 80% on tokens. 100% local.
 
@@ -48,12 +47,21 @@ Add to config file:
 ```
 
 #### 💻 Claude Code
+
+**macOS/Linux:**
 ```bash
 claude mcp add mcp-nova mcp-nova
 ```
 
+**Windows:**
+Due to PATH resolution issues in Claude Code on Windows, use the full path:
+```bash
+# Replace YOUR_USERNAME with your actual Windows username
+claude mcp add mcp-nova node "C:\Users\YOUR_USERNAME\AppData\Roaming\npm\node_modules\@nova-mcp\mcp-nova\bin\nova-memory-mcp.mjs"
+```
+
 #### 🚀 Cursor IDE
-Create `.cursor/mcp.json` in your project root:
+Create `.cursor/mcp.json` in your project:
 ```json
 {
   "mcpServers": {
@@ -65,7 +73,7 @@ Create `.cursor/mcp.json` in your project root:
 ```
 
 ### 3. Restart & Enjoy!
-Restart your application to load MCP Nova. Your AI now has permanent memory!
+Restart your application to load MCP Nova.
 
 ## 💡 Real-World Examples
 
@@ -122,135 +130,77 @@ Assistant: "Components depending on TokenService:
 
 ## 🛠️ Powerful Features
 
-### 9 Integrated Meta-Tools
+### 9 Integrated Tools
 
-| Tool | Description | Example Commands |
-|------|-------------|------------------|
-| **🧠 memory** | Store/retrieve any information | "Remember this", "Search memories about X" |
-| **📋 workflow** | Track development phases | "Create enhancement: Dark mode", "Show current phase" |
-| **📊 board** | Visual task management | "Create task", "Move to completed", "Show board" |
-| **🔗 relationships** | Knowledge graph builder | "Link X to Y", "Show connections" |
-| **📈 analysis** | Memory insights & patterns | "Analyze React patterns", "Find conflicts" |
-| **📁 project** | Multi-project support | "Switch to backend project", "List projects" |
-| **⚙️ settings** | Preferences & optimization | "Set algorithm to hybrid", "Show settings" |
-| **⚡ quick** | Fast actions & shortcuts | "Quick note: Bug in auth", "Quick task" |
-| **❓ help** | Interactive documentation | "How to search?", "Show examples" |
-
-### Advanced Capabilities
-
-- **Smart Search**: TF-IDF, BM25, and hybrid algorithms
-- **Auto-Extraction**: Automatically identifies important information
-- **Conflict Detection**: Finds contradictions in stored knowledge
-- **Memory Visualization**: ASCII graphs and relationship maps
-- **Cross-Reference Validation**: Ensures data consistency
-- **Temporal Analysis**: Track how knowledge evolves
+| Tool | Description | Example Command |
+|------|-------------|-----------------|
+| **memory** | Store/retrieve information | "Remember this configuration" |
+| **workflow** | Track development phases | "Create enhancement: Add dark mode" |
+| **board** | Kanban task management | "Move task-001 to completed" |
+| **relationships** | Entity knowledge graph | "Link UserService to Database" |
+| **analysis** | Memory insights & patterns | "Analyze my Flutter memories" |
+| **project** | Multi-project support | "Switch to my React project" |
+| **settings** | Configure preferences | "Set search algorithm to hybrid" |
+| **quick** | Fast actions & shortcuts | "Quick note: Check auth flow" |
+| **help** | Interactive documentation | "How do I use memory search?" |
 
 ## 🔥 Use Cases
 
 ### 🧑‍💻 For Developers
-- **Code Context**: Remember implementations, APIs, configurations
-- **Bug Solutions**: Track issues and their fixes permanently
-- **Learning Journal**: Document your learning path
-- **Project Switching**: Instant context switches between projects
-- **Code Reviews**: Remember feedback and decisions
-- **Architecture Decisions**: Document and recall design choices
+- **Code Context**: Remember function implementations, API designs
+- **Bug Tracking**: Track issues and their solutions
+- **Learning Path**: Document what you've learned
+- **Project Switching**: Seamlessly move between projects
 
 ### 🎨 For Creators
-- **Content Planning**: Organize ideas and outlines
-- **Research Database**: Build your knowledge base
-- **Character Development**: Track story elements
-- **Asset Organization**: Remember design decisions
-- **Inspiration Vault**: Store creative sparks
-- **Project Bible**: Maintain consistency across work
+- **Content Ideas**: Store and organize creative concepts
+- **Research Notes**: Build a personal knowledge base
+- **Writing Assistant**: Track characters, plots, themes
+- **Asset Management**: Remember design decisions
 
 ### 🚀 For Teams
-- **Onboarding Memory**: Persistent team knowledge
-- **Decision Log**: Track why choices were made
-- **Meeting Intelligence**: Never lose discussions
-- **Knowledge Transfer**: Share context efficiently
-- **Documentation Assistant**: Auto-organize information
-- **Collective Intelligence**: Build team memory
+- **Onboarding**: Create persistent documentation
+- **Knowledge Sharing**: Build team memory
+- **Decision Tracking**: Document architectural choices
+- **Meeting Notes**: Never lose important discussions
 
-## 📊 Performance & Architecture
+## 📊 Performance
 
-- ⚡ **Response Time**: < 50ms average query time
-- 💾 **Capacity**: 10,000+ memories with instant access
-- 🔍 **Search**: Sub-second full-text search
-- 📦 **Storage**: SQLite with optimized indexes
-- 🔒 **Privacy**: 100% local, zero cloud dependencies
-- 🏗️ **Architecture**: Event-driven, modular design
+- ⚡ **Response Time**: < 50ms average
+- 💾 **Memory Capacity**: 10,000+ items
+- 🔍 **Search Speed**: Sub-second for large datasets
+- 📦 **Storage**: Efficient SQLite backend
+- 🔒 **100% Local**: No cloud dependencies
 
 ## 🔒 Privacy & Security
 
-**Your data is YOUR data:**
+Your data is YOUR data:
 - ✅ **Zero Cloud**: Everything stays on your machine
-- ✅ **No Telemetry**: We don't collect any usage data
-- ✅ **No Network**: Works completely offline
-- ✅ **Open Core**: Audit our security claims
-- ✅ **Local Database**: SQLite file you control
-- ✅ **No Dependencies**: Minimal external packages
+- ✅ **No Telemetry**: We don't track anything
+- ✅ **No External APIs**: Completely offline
+- ✅ **Open Core**: Verify our security claims
 
-## 🗺️ Roadmap
+## 🐛 Troubleshooting
 
-- [ ] **v0.2**: Visual memory browser UI
-- [ ] **v0.3**: Export/import functionality
-- [ ] **v0.4**: Team collaboration features
-- [ ] **v0.5**: Plugin system for extensions
-- [ ] **v1.0**: Stable release with GUI
+### MCP Nova not appearing?
+1. Verify installation: `mcp-nova --version`
+2. Check config file JSON syntax
+3. Restart your application completely
+4. For Windows users, ensure npm global bin is in PATH
 
-## 🤝 Contributing
-
-We welcome contributions! Areas we'd love help with:
-- Additional storage backends (PostgreSQL, Redis)
-- Visualization improvements
-- Language-specific extractors
-- Integration examples
-- Documentation translations
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## 📚 Documentation
-
-- [Installation Guide](docs/installation.md)
-- [Configuration Options](docs/configuration.md)
-- [API Reference](docs/api.md)
-- [Examples](docs/examples.md)
-- [Troubleshooting](docs/troubleshooting.md)
-
-## 🐛 Support
-
-- **Issues**: [GitHub Issues](https://github.com/nova-mcp/mcp-nova/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/nova-mcp/mcp-nova/discussions)
-- **Email**: jagdeep.singh@blockb.ca
-- **Wiki**: [GitHub Wiki](https://github.com/nova-mcp/mcp-nova/wiki)
-
-## 📊 Stats & Social Proof
-
-- 🌟 **Active Users**: Growing community
-- 💬 **Success Stories**: 80%+ token reduction reported
-- 🔧 **Battle Tested**: In production use
-- 🌍 **Global**: Users across all timezones
+### Need Help?
+- 📧 Email: jagdeep.singh@blockb.ca
+- 🐛 Issues: [GitHub Issues](https://github.com/nova-mcp/mcp-nova/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/nova-mcp/mcp-nova/discussions)
 
 ## 📄 License
 
 Commercial license with free personal use.
 - ✅ **Free**: Personal projects, learning, open source
-- 💼 **Commercial**: Contact jagdeep.singh@blockb.ca for licensing
-- 📜 **Terms**: See [LICENSE](LICENSE) for details
-
-## 🙏 Acknowledgments
-
-Built with:
-- [Model Context Protocol](https://modelcontextprotocol.com) by Anthropic
-- SQLite for reliable local storage
-- The amazing Claude and Cursor communities
+- 💼 **Commercial**: Contact for licensing
 
 ---
 
 **Made with ❤️ by [Jagdeep Singh](https://github.com/jagdeepsinghdev)**
 
-⭐ **Star this repo** if MCP Nova saves you time and tokens!
-
-🐦 **Share your success** stories with #MCPNova
-
-🚀 **Join our community** to shape the future of AI memory!
+⭐ Star us on GitHub if MCP Nova saves you time and tokens!
