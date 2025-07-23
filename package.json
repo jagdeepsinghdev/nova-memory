@@ -4,7 +4,6 @@
   "description": "AI Memory System for Claude & Cursor - Stop losing context. Start saving tokens.",
   "main": "nova-memory-mcp.mjs",
   "bin": {
-    "mcp-nova": "./nova-memory-cli.js",
     "nova-memory-mcp": "./nova-memory-mcp.mjs"
   },
   "engines": {

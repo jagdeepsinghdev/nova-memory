@@ -44,7 +44,7 @@ Add to config file:
 {
   "mcpServers": {
     "mcp-nova": {
-      "command": "mcp-nova"
+      "command": "nova-memory-mcp"
     }
   }
 }
@@ -56,7 +56,7 @@ Add to config file:
   "mcpServers": {
     "mcp-nova": {
       "command": "npx",
-      "args": ["@nova-mcp/mcp-nova"]
+      "args": ["nova-memory-mcp"]
     }
   }
 }
@@ -66,7 +66,7 @@ Add to config file:
 
 **macOS/Linux:**
 ```bash
-claude mcp add mcp-nova mcp-nova
+claude mcp add mcp-nova nova-memory-mcp
 ```
 
 **Windows:**
@@ -82,7 +82,7 @@ Create `.cursor/mcp.json` in your project:
 {
   "mcpServers": {
     "mcp-nova": {
-      "command": "mcp-nova"
+      "command": "nova-memory-mcp"
     }
   }
 }

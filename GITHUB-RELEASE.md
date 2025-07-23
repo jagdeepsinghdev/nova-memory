@@ -48,7 +48,7 @@ Add to `claude_desktop_config.json`:
 {
   "mcpServers": {
     "mcp-nova": {
-      "command": "mcp-nova"
+      "command": "nova-memory-mcp"
     }
   }
 }
@@ -60,7 +60,7 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "mcp-nova": {
       "command": "npx",
-      "args": ["@nova-mcp/mcp-nova"]
+      "args": ["nova-memory-mcp"]
     }
   }
 }
