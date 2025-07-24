@@ -44,7 +44,7 @@ Add to config file:
 {
   "mcpServers": {
     "mcp-nova": {
-      "command": "mcp-nova"
+      "command": "nova-memory-mcp"
     }
   }
 }
@@ -82,7 +82,7 @@ Create `.cursor/mcp.json` in your project:
 {
   "mcpServers": {
     "mcp-nova": {
-      "command": "mcp-nova"
+      "command": "nova-memory-mcp"
     }
   }
 }
