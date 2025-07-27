@@ -1,0 +1,79 @@
+{
+  "name": "@nova-mcp/mcp-nova",
+  "version": "0.3.0",
+  "description": "AI Memory System for Claude & Cursor - Stop losing context. Start saving tokens.",
+  "main": "nova-memory-mcp.mjs",
+  "bin": {
+    "mcp-nova": "./nova-memory-mcp.mjs",
+    "nova-memory-mcp": "./nova-memory-mcp.mjs",
+    "mcp-nova-setup": "./mcp-nova-setup"
+  },
+  "keywords": [
+    "ai",
+    "memory",
+    "mcp",
+    "claude",
+    "claude-desktop",
+    "claude-code",
+    "cursor",
+    "cursor-ide",
+    "project-memory",
+    "file-watching",
+    "developer-tools",
+    "model-context-protocol",
+    "ai-assistant",
+    "ai-memory",
+    "local-memory",
+    "token-savings",
+    "context-management",
+    "knowledge-graph",
+    "sqlite",
+    "workflow-management",
+    "task-management",
+    "version-tracking",
+    "mcp-server",
+    "mcp-tools",
+    "anthropic",
+    "llm",
+    "llm-tools",
+    "ai-tools",
+    "productivity",
+    "development-tools",
+    "free",
+    "open-source",
+    "mit-license"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.16.0",
+    "sqlite3": "^5.1.7",
+    "uuid": "^11.1.0",
+    "chalk": "^4.1.2",
+    "chokidar": "^4.0.3",
+    "fs-extra": "^11.3.0",
+    "yaml": "^2.8.0"
+  },
+  "scripts": {
+    "postinstall": "echo '🎉 MCP Nova installed successfully!' || true",
+    "preinstall": "echo '📦 Installing MCP Nova - AI Memory System...' || true"
+  },
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "peerDependenciesMeta": {},
+  "author": "Nova AI Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jagdeepsinghdev/nova-memory.git"
+  },
+  "homepage": "https://github.com/jagdeepsinghdev/nova-memory#readme",
+  "bugs": {
+    "url": "https://github.com/jagdeepsinghdev/nova-memory/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/jagdeepsinghdev"
+  }
+}

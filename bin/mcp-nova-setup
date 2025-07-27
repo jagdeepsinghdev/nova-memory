@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+
+/**
+ * MCP Nova Setup Script
+ * Auto-configures Claude Desktop and provides Claude Code instructions
+ * Works cross-platform (Windows, macOS, Linux)
+ */
+
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+
+console.log('🚀 MCP Nova Setup - Auto-configuration Tool\n');
+
+// Detect platform
+const platform = os.platform();
+const isWindows = platform === 'win32';
+const isMac = platform === 'darwin';
+const isLinux = platform === 'linux';
+
+// Get Claude Desktop config path based on OS
+function getClaudeConfigPath() {
+  if (isWindows) {
+    return path.join(os.homedir(), 'AppData', 'Roaming', 'Claude', 'claude_desktop_config.json');
+  } else if (isMac) {
+    return path.join(os.homedir(), 'Library', 'Application Support', 'Claude', 'claude_desktop_config.json');
+  } else {
+    return path.join(os.homedir(), '.config', 'Claude', 'claude_desktop_config.json');
+  }
+}
+
+// Configure Claude Desktop
+function configureClaudeDesktop() {
+  console.log('📱 Configuring Claude Desktop...\n');
+  
+  const configPath = getClaudeConfigPath();
+  const configDir = path.dirname(configPath);
+  
+  // Ensure directory exists
+  if (!fs.existsSync(configDir)) {
+    fs.mkdirSync(configDir, { recursive: true });
+  }
+  
+  // Read existing config or create new one
+  let config = { mcpServers: {} };
+  if (fs.existsSync(configPath)) {
+    try {
+      config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      console.log('✅ Found existing Claude Desktop config');
+    } catch (error) {
+      console.warn('⚠️  Could not parse existing config, creating backup');
+      fs.copyFileSync(configPath, configPath + '.backup');
+    }
+  }
+  
+  // Ensure mcpServers exists
+  if (!config.mcpServers) {
+    config.mcpServers = {};
+  }
+  
+  // Use npx approach for simplicity and cross-platform compatibility
+  config.mcpServers['mcp-nova'] = {
+    command: 'npx',
+    args: ['@nova-mcp/mcp-nova']
+  };
+  
+  // Write updated config
+  try {
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+    console.log('✅ Successfully configured Claude Desktop!');
+    console.log(`📍 Config location: ${configPath}`);
+    console.log('\n📝 Added configuration:');
+    console.log(JSON.stringify(config.mcpServers['mcp-nova'], null, 2));
+  } catch (error) {
+    console.error('❌ Error writing config:', error.message);
+    console.log('\n💡 Please manually add this to your claude_desktop_config.json:');
+    console.log(JSON.stringify({
+      mcpServers: {
+        'mcp-nova': config.mcpServers['mcp-nova']
+      }
+    }, null, 2));
+    return false;
+  }
+  
+  return true;
+}
+
+// Show Claude Code instructions
+function showClaudeCodeInstructions() {
+  console.log('\n💻 For Claude Code:\n');
+  
+  console.log('Run one of these commands:\n');
+  
+  // Simple npx approach (recommended)
+  console.log('Option 1 (Recommended - works everywhere):');
+  console.log('claude mcp add mcp-nova npx @nova-mcp/mcp-nova\n');
+  
+  // Direct path approach
+  console.log('Option 2 (Direct path - if npx is slow):');
+  if (isWindows) {
+    console.log('claude mcp add mcp-nova node "%APPDATA%\\npm\\node_modules\\@nova-mcp\\mcp-nova\\bin\\nova-memory-mcp.mjs"');
+  } else if (isMac) {
+    console.log('claude mcp add mcp-nova /usr/local/lib/node_modules/@nova-mcp/mcp-nova/bin/nova-memory-mcp.mjs');
+  } else {
+    console.log('claude mcp add mcp-nova ~/.npm-global/lib/node_modules/@nova-mcp/mcp-nova/bin/nova-memory-mcp.mjs');
+  }
+}
+
+// Main setup
+console.log(`Platform: ${platform}`);
+console.log(`Node.js: ${process.version}\n`);
+
+// Configure Claude Desktop
+const desktopConfigured = configureClaudeDesktop();
+
+// Show Claude Code instructions
+showClaudeCodeInstructions();
+
+// Final instructions
+console.log('\n' + '='.repeat(60));
+console.log('\n🎉 Setup Complete!\n');
+
+if (desktopConfigured) {
+  console.log('✅ Claude Desktop: Configured automatically');
+  console.log('   → Restart Claude Desktop to load MCP Nova\n');
+} else {
+  console.log('⚠️  Claude Desktop: Manual configuration needed\n');
+}
+
+console.log('📋 Claude Code: Use one of the commands above\n');
+
+console.log('🧪 Test it out:');
+console.log('   1. Restart Claude Desktop or run the Claude Code command');
+console.log('   2. Ask: "What tools do you have available?"');
+console.log('   3. You should see 9 MCP Nova tools!\n');
+
+console.log('📚 Documentation: https://github.com/jagdeepsinghdev/nova-memory');
+console.log('🐛 Issues: https://github.com/jagdeepsinghdev/nova-memory/issues\n');

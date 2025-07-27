@@ -1,0 +1,30 @@
+# Development and deployment files (not for distribution)
+pipeline/
+scripts/
+tests/
+*.test.js
+*.spec.js
+
+# Build artifacts
+*.log
+*.tmp
+.DS_Store
+
+# Package files
+*.tgz
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+# Local config
+*.local.*
+.env
+
+# OS files
+Thumbs.db
+Desktop.ini
