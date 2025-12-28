@@ -1,0 +1,65 @@
+{
+  "name": "@nova-mcp/mcp-nova",
+  "displayName": "Nova Memory",
+  "description": "Persistent AI memory with semantic search, task management, and knowledge graphs for Claude",
+  "version": "1.0.3",
+  "author": "Jagdeep Singh",
+  "license": "MIT",
+  "repository": "https://github.com/jagdeepsinghdev/nova-memory",
+  "homepage": "https://github.com/jagdeepsinghdev/nova-memory#readme",
+  "keywords": [
+    "mcp",
+    "claude",
+    "memory",
+    "ai",
+    "semantic-search",
+    "knowledge-graph",
+    "task-management",
+    "sqlite"
+  ],
+  "mcp": {
+    "command": "npx",
+    "args": ["@nova-mcp/mcp-nova"],
+    "transport": "stdio"
+  },
+  "tools": [
+    {
+      "name": "store_memory",
+      "description": "Store content with auto-tagging and path tracking"
+    },
+    {
+      "name": "memory_search",
+      "description": "Semantic search with BM25 ranking"
+    },
+    {
+      "name": "memory_query",
+      "description": "Filter memories by type, tags, or path"
+    },
+    {
+      "name": "task_management",
+      "description": "Create and manage tasks with phases"
+    },
+    {
+      "name": "task_board",
+      "description": "Visual task board overview"
+    },
+    {
+      "name": "knowledge_graph",
+      "description": "Build and query knowledge graphs"
+    },
+    {
+      "name": "analysis_conflicts",
+      "description": "Detect conflicts between memories"
+    },
+    {
+      "name": "project_profile",
+      "description": "Manage project-level memory profiles"
+    },
+    {
+      "name": "memory_compact",
+      "description": "Compact and optimize memory storage"
+    }
+  ],
+  "categories": ["memory", "productivity", "knowledge-management"],
+  "platforms": ["macos", "linux", "windows"]
+}
